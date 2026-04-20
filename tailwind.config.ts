@@ -13,7 +13,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ['"Cormorant Garamond"', 'serif'],
+        display: ['Italiana', 'serif'],
+        script: ['"Pinyon Script"', 'cursive'],
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
+        blush: "hsl(var(--blush))",
+        "blush-deep": "hsl(var(--blush-deep))",
+        cream: "hsl(var(--cream))",
+        gold: "hsl(var(--gold))",
+        "gold-light": "hsl(var(--gold-light))",
+        ink: "hsl(var(--ink))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
