@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import BirthdayFunnel from "./pages/Birthday.tsx";
 import Florist from "./pages/Florist.tsx";
 import Mercedes from "./pages/Mercedes.tsx";
+import AutoRepair from "./pages/AutoRepair.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -18,7 +19,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Mercedes />} />
+          <Route path="/" element={<AutoRepair />} />
+          <Route path="/mercedes" element={<Mercedes />} />
           <Route path="/florist" element={<Florist />} />
           <Route path="/birthday" element={<BirthdayFunnel />} />
           <Route path="/wedding" element={<Index />} />
