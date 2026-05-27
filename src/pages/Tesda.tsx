@@ -337,6 +337,22 @@ const Tesda = () => {
           </div>
         </div>
       </footer>
+
+      {/* FLOATING MESSENGER CTA */}
+      <a
+        href="https://www.facebook.com/ofelia.ats"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on Facebook Messenger"
+        className="fixed bottom-5 right-5 z-50 group inline-flex items-center gap-2 rounded-full pl-4 pr-5 py-3 text-white font-semibold shadow-2xl hover:scale-105 transition"
+        style={{ background: 'hsl(var(--t-green))' }}
+      >
+        <span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
+          <span className="absolute inset-0 rounded-full animate-ping bg-white/30" />
+          <MessageCircle className="h-5 w-5" />
+        </span>
+        <span className="hidden sm:inline">Chat with us</span>
+      </a>
     </div>
   );
 };
