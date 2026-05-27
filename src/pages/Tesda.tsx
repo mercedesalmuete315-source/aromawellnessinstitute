@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 import {
   CheckCircle2, GraduationCap, ClipboardCheck, Award, Briefcase,
   BookOpen, Clock, Users, MessageCircle, MapPin, Phone, Facebook, ArrowRight, Leaf, Sparkles
@@ -24,15 +25,29 @@ const steps = [
 
 const Tesda = () => {
   const [form, setForm] = useState({ name: "", contact: "", course: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.contact.trim() || !form.course.trim()) {
       toast.error("Please complete all fields to enroll.");
       return;
     }
-    toast.success(`Salamat, ${form.name}! We'll contact you shortly.`);
-    setForm({ name: "", contact: "", course: "" });
+    setSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("submit-enrollment", {
+        body: form,
+      });
+      if (error) throw error;
+      if (!data?.success) throw new Error(data?.error ?? "Submission failed");
+      toast.success(`Salamat, ${form.name}! We'll contact you shortly.`);
+      setForm({ name: "", contact: "", course: "" });
+    } catch (err) {
+      console.error(err);
+      toast.error("Could not submit. Please try again or message us on Facebook.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -254,10 +269,10 @@ const Tesda = () => {
                 placeholder="e.g., Massage Therapy NC II"
               />
             </div>
-            <button type="submit"
-                    className="rounded-full px-6 py-3.5 text-white font-semibold shadow-lg hover:opacity-95 transition inline-flex items-center justify-center gap-2"
+            <button type="submit" disabled={submitting}
+                    className="rounded-full px-6 py-3.5 text-white font-semibold shadow-lg hover:opacity-95 transition inline-flex items-center justify-center gap-2 disabled:opacity-60"
                     style={{ background: 'hsl(var(--t-green))' }}>
-              Enroll Now <ArrowRight className="h-4 w-4" />
+              {submitting ? "Submitting..." : <>Enroll Now <ArrowRight className="h-4 w-4" /></>}
             </button>
             <a
               href="https://docs.google.com/spreadsheets/d/1gtFQU4CQVULeMdoavj-rcGW7XODYFcZXybUNwSueV5M/edit?gid=0#gid=0"
