@@ -25,15 +25,29 @@ const steps = [
 
 const Tesda = () => {
   const [form, setForm] = useState({ name: "", contact: "", course: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.contact.trim() || !form.course.trim()) {
       toast.error("Please complete all fields to enroll.");
       return;
     }
-    toast.success(`Salamat, ${form.name}! We'll contact you shortly.`);
-    setForm({ name: "", contact: "", course: "" });
+    setSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("submit-enrollment", {
+        body: form,
+      });
+      if (error) throw error;
+      if (!data?.success) throw new Error(data?.error ?? "Submission failed");
+      toast.success(`Salamat, ${form.name}! We'll contact you shortly.`);
+      setForm({ name: "", contact: "", course: "" });
+    } catch (err) {
+      console.error(err);
+      toast.error("Could not submit. Please try again or message us on Facebook.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
