@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 import {
   CheckCircle2, GraduationCap, ClipboardCheck, Award, Briefcase,
   BookOpen, Clock, Users, MessageCircle, MapPin, Phone, Facebook, ArrowRight, Leaf, Sparkles
