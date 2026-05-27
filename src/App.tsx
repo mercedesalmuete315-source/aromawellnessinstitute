@@ -9,6 +9,7 @@ import Florist from "./pages/Florist.tsx";
 import Mercedes from "./pages/Mercedes.tsx";
 import AutoRepair from "./pages/AutoRepair.tsx";
 import Tesda from "./pages/Tesda.tsx";
+import AromaSpa from "./pages/AromaSpa.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Tesda />} />
+          <Route path="/spa" element={<AromaSpa />} />
           <Route path="/auto-repair" element={<AutoRepair />} />
           <Route path="/mercedes" element={<Mercedes />} />
           <Route path="/florist" element={<Florist />} />
