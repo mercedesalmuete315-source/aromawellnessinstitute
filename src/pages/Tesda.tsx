@@ -269,10 +269,10 @@ const Tesda = () => {
                 placeholder="e.g., Massage Therapy NC II"
               />
             </div>
-            <button type="submit"
-                    className="rounded-full px-6 py-3.5 text-white font-semibold shadow-lg hover:opacity-95 transition inline-flex items-center justify-center gap-2"
+            <button type="submit" disabled={submitting}
+                    className="rounded-full px-6 py-3.5 text-white font-semibold shadow-lg hover:opacity-95 transition inline-flex items-center justify-center gap-2 disabled:opacity-60"
                     style={{ background: 'hsl(var(--t-green))' }}>
-              Enroll Now <ArrowRight className="h-4 w-4" />
+              {submitting ? "Submitting..." : <>Enroll Now <ArrowRight className="h-4 w-4" /></>}
             </button>
             <a
               href="https://docs.google.com/spreadsheets/d/1gtFQU4CQVULeMdoavj-rcGW7XODYFcZXybUNwSueV5M/edit?gid=0#gid=0"
