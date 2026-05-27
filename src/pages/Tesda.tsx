@@ -274,16 +274,25 @@ const Tesda = () => {
                 <MapPin className="h-5 w-5 mt-0.5" style={{ color: 'hsl(var(--t-green))' }} />
                 <div>
                   <div className="font-semibold">Aroma Wellness Institute Inc.</div>
-                  <div className="text-slate-600 text-sm">[Insert Address Here]</div>
+                  <div className="text-slate-600 text-sm">CSA Building, Zulueta corner Gensan Drive,<br />Zone IV, Koronadal City, South Cotabato</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 mt-0.5" style={{ color: 'hsl(var(--t-green))' }} />
-                <div className="text-slate-700">[Insert Contact Number]</div>
+                <a href="tel:+639635430893" className="text-slate-700 hover:text-emerald-700">0963 543 0893</a>
               </li>
               <li className="flex items-start gap-3">
-                <MessageCircle className="h-5 w-5 mt-0.5" style={{ color: 'hsl(var(--t-green))' }} />
-                <div className="text-slate-700">Message us on Facebook for faster response</div>
+                <Facebook className="h-5 w-5 mt-0.5" style={{ color: 'hsl(var(--t-green))' }} />
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-emerald-700">
+                  Message us on Facebook for faster response
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <ClipboardCheck className="h-5 w-5 mt-0.5" style={{ color: 'hsl(var(--t-green))' }} />
+                <div className="text-slate-700 text-sm">
+                  <div><span className="font-semibold">TIN No.:</span> 608-519-677-000</div>
+                  <div><span className="font-semibold">SEC Registration No.:</span> CN201967538</div>
+                </div>
               </li>
             </ul>
             <div className="mt-8 flex gap-3">
