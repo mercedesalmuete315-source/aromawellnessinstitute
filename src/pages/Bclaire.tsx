@@ -221,7 +221,7 @@ export default function Bclaire() {
             <p className="text-pink-900/60 mt-2">Authorized Her Choice Ph IBO — Parañaque City.</p>
           </div>
           <div className="space-y-2">
-            <div className="flex items-center gap-2"><MapPin className="w-4 h-4 bc-pink-text"/> Parañaque City, PH</div>
+            <div className="flex items-start gap-2"><MapPin className="w-4 h-4 bc-pink-text mt-0.5 shrink-0"/> CSA Bldg., Zulueta St. corner Gensan Drive, Zone IV, Koronadal City, South Cotabato</div>
             <div className="flex items-center gap-2"><Phone className="w-4 h-4 bc-pink-text"/> 0917•000•0000</div>
             <div className="flex items-center gap-2"><MessageCircle className="w-4 h-4 bc-pink-text"/> m.me/bclairebeauty</div>
           </div>
