@@ -274,15 +274,6 @@ const Tesda = () => {
                     style={{ background: 'hsl(var(--t-green))' }}>
               {submitting ? "Submitting..." : <>Enroll Now <ArrowRight className="h-4 w-4" /></>}
             </button>
-            <a
-              href="https://docs.google.com/spreadsheets/d/1gtFQU4CQVULeMdoavj-rcGW7XODYFcZXybUNwSueV5M/edit?gid=0#gid=0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center text-sm font-medium underline underline-offset-4 hover:opacity-80"
-              style={{ color: 'hsl(var(--t-green-deep))' }}
-            >
-              View Applicants (Admin) →
-            </a>
           </form>
         </div>
       </section>
