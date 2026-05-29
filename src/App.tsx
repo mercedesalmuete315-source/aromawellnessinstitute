@@ -10,6 +10,7 @@ import Mercedes from "./pages/Mercedes.tsx";
 import AutoRepair from "./pages/AutoRepair.tsx";
 import Tesda from "./pages/Tesda.tsx";
 import AromaSpa from "./pages/AromaSpa.tsx";
+import LadyBoss from "./pages/LadyBoss.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -21,7 +22,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Tesda />} />
+          <Route path="/" element={<LadyBoss />} />
+          <Route path="/tesda" element={<Tesda />} />
           <Route path="/spa" element={<AromaSpa />} />
           <Route path="/auto-repair" element={<AutoRepair />} />
           <Route path="/mercedes" element={<Mercedes />} />
