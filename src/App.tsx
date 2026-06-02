@@ -24,6 +24,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LadyBoss />} />
+          <Route path="/challenge" element={<Challenge />} />
           <Route path="/tesda" element={<Tesda />} />
           <Route path="/spa" element={<AromaSpa />} />
           <Route path="/auto-repair" element={<AutoRepair />} />
