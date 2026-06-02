@@ -11,6 +11,7 @@ import AutoRepair from "./pages/AutoRepair.tsx";
 import Tesda from "./pages/Tesda.tsx";
 import AromaSpa from "./pages/AromaSpa.tsx";
 import LadyBoss from "./pages/LadyBoss.tsx";
+import Challenge from "./pages/Challenge.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
