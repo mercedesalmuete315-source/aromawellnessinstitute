@@ -11,6 +11,7 @@ import AutoRepair from "./pages/AutoRepair.tsx";
 import Tesda from "./pages/Tesda.tsx";
 import AromaSpa from "./pages/AromaSpa.tsx";
 import LadyBoss from "./pages/LadyBoss.tsx";
+import Lumen from "./pages/Lumen.tsx";
 import Challenge from "./pages/Challenge.tsx";
 import SuccessChallenge from "./pages/SuccessChallenge.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -24,7 +25,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LadyBoss />} />
+          <Route path="/" element={<Lumen />} />
+          <Route path="/ladyboss" element={<LadyBoss />} />
           <Route path="/challenge" element={<Challenge />} />
           <Route path="/success-challenge" element={<SuccessChallenge />} />
           <Route path="/tesda" element={<Tesda />} />
